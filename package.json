@@ -1,0 +1,29 @@
+{
+  "name": "boilerforge",
+  "version": "1.0.0",
+  "description": "A CLI tool to scaffold projects with boilerplate code.",
+  "main": "src/index.js",
+  "type": "module",
+  "bin": {
+    "boilerforge": "bin/boiler.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shehu-Muhammad/BoilerForge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shehu-Muhammad/BoilerForge/issues"
+  },
+  "homepage": "https://github.com/Shehu-Muhammad/BoilerForge#readme",
+  "dependencies": {
+    "chalk": "^5.5.0",
+    "commander": "^14.0.0",
+    "ora": "^8.2.0"
+  }
+}
