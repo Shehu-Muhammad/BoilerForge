@@ -3,6 +3,8 @@
 import { Command } from 'commander';
 import createCommand from '../commands/create.js';
 import initGitCommand from '../commands/initGit.js';
+import initCommand from '../commands/init.js';
+import lintCommand from '../commands/lint.js';
 const program = new Command();
 
 program
@@ -15,5 +17,11 @@ program.addCommand(createCommand);
 
 // Register the `initGit` command from another file
 program.addCommand(initGitCommand);
+
+// Register the `init` command from another file
+program.addCommand(initCommand);
+
+// Register the `lint` command from another file
+program.addCommand(lintCommand);
 
 program.parse(process.argv);
