@@ -2,6 +2,7 @@
 
 import { Command } from 'commander';
 import createCommand from '../commands/create.js';
+import initGitCommand from '../commands/initGit.js';
 const program = new Command();
 
 program
@@ -11,5 +12,8 @@ program
 
 // Register the `create` command from another file
 program.addCommand(createCommand);
+
+// Register the `initGit` command from another file
+program.addCommand(initGitCommand);
 
 program.parse(process.argv);
