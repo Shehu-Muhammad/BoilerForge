@@ -6,6 +6,7 @@ import initGitCommand from '../commands/initGit.js';
 import initCommand from '../commands/init.js';
 import lintCommand from '../commands/lint.js';
 import listCommand from '../commands/list.js';
+import upgradeCommand from '../commands/upgrade.js';
 const program = new Command();
 
 program
@@ -27,5 +28,8 @@ program.addCommand(lintCommand);
 
 // Register the `list` command from another file
 program.addCommand(listCommand);
+
+// Register the `upgrade` command from another file
+program.addCommand(upgradeCommand);
 
 program.parse(process.argv);
