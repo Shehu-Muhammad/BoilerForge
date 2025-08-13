@@ -5,6 +5,7 @@ import createCommand from '../commands/create.js';
 import initGitCommand from '../commands/initGit.js';
 import initCommand from '../commands/init.js';
 import lintCommand from '../commands/lint.js';
+import listCommand from '../commands/list.js';
 const program = new Command();
 
 program
@@ -23,5 +24,8 @@ program.addCommand(initCommand);
 
 // Register the `lint` command from another file
 program.addCommand(lintCommand);
+
+// Register the `list` command from another file
+program.addCommand(listCommand);
 
 program.parse(process.argv);
