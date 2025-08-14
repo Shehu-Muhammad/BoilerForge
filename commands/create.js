@@ -1,17 +1,19 @@
 import { Command } from 'commander';
 import fs from 'fs';
 import path from 'path';
-import { execSync } from 'child_process';
+import { initGitRepoHelper } from './helpers/initGitRepoHelper.js';
 
 const create = new Command('create')
   .description('Creates a new project folder with boilerplate files.')
   .argument('<name>', 'name of project')
   .option('--template <type>', 'project template type (node, python, react)')
-  .option('--git', 'initializes a Git repo automatically')
+  .option('--git [mode]', 'Initialize a Git repo automatically with (optional mode: bare, shared, etc.)')
   .action((name, options) => {
     const projectPath = getProjectPath(name);
     const templateType = getTemplateType(options);
     const templatePath = getTemplatePath(templateType);
+
+    // Check if project folder exists
     try {
       fs.statSync(projectPath);
       console.log(`Project "${name}" already exists!`);
@@ -23,6 +25,7 @@ const create = new Command('create')
       console.log(`Creating project "${name}" with template: ${templateType} and ${options.git}`);
     }
 
+    // Create folder
     try {
       fs.mkdirSync(projectPath, { recursive: true });
       console.log(`Created folder at ${projectPath}`);
@@ -31,6 +34,7 @@ const create = new Command('create')
       process.exit(1);
     }
 
+    // Copy template files
     try {
       fs.cpSync(templatePath, projectPath, { recursive: true });
       console.log("Copied template files.");
@@ -39,12 +43,15 @@ const create = new Command('create')
       process.exit(1);
     }
     
-    if (options.git) {
+    // Initialize Git if requested
+    if (options.git !== undefined) {
+      const gitOptions = {};
+      if (options.git === 'bare') gitOptions.bare = true;
+
       try {
-        execSync('git init', { cwd: projectPath, stdio: 'inherit' });
-        console.log("Initialized empty Git repository.");
+        initGitRepoHelper(projectPath, gitOptions);
       } catch (err) {
-        console.error("Failed to initialize Git:", err.message);
+        console.error("❌ Git initialization failed:", err.message);
       }
     }
 

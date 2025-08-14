@@ -2,7 +2,7 @@
 
 import { Command } from 'commander';
 import createCommand from '../commands/create.js';
-import initGitCommand from '../commands/initGit.js';
+import initGitCommand from '../commands/initGitRepo.js';
 import initCommand from '../commands/init.js';
 import lintCommand from '../commands/lint.js';
 import listCommand from '../commands/list.js';
