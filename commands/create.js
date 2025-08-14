@@ -47,6 +47,10 @@ const create = new Command('create')
     if (options.git !== undefined) {
       const gitOptions = {};
       if (options.git === 'bare') gitOptions.bare = true;
+      if (options.template === 'template') gitOptions.template = true;
+      if (options.separateGitDir === 'separateGitDir') gitOptions.separateGitDir = true;
+      if (options.shared) gitOptions.shared = options.shared;
+      if (options.quiet) gitOptions.quiet = options.quiet;
 
       try {
         initGitRepoHelper(projectPath, gitOptions);
