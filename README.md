@@ -2,6 +2,7 @@
 [![npm version](https://img.shields.io/npm/v/boilerforge)](https://www.npmjs.com/package/boilerforge)
 [![npm downloads](https://img.shields.io/npm/dt/boilerforge)](https://www.npmjs.com/package/boilerforge)
 [![Dependencies](https://img.shields.io/librariesio/release/npm/boilerforge)](https://www.npmjs.com/package/boilerforge)
+
 A simple CLI tool for generating starter templates for Node, React, Python, and Flask projects.
 > ⚡ Generate full-stack starter projects in seconds.
 
