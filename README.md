@@ -147,4 +147,6 @@ Pull requests are welcome! If you’d like to suggest a new template, please ope
 
 ---
 
+## License
+
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
