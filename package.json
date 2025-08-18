@@ -24,6 +24,7 @@
   "dependencies": {
     "chalk": "^5.5.0",
     "commander": "^14.0.0",
+    "inquirer": "^12.9.3",
     "ora": "^8.2.0"
   }
 }

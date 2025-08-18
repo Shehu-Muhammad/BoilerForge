@@ -7,6 +7,7 @@ import initCommand from '../commands/init.js';
 import lintCommand from '../commands/lint.js';
 import listCommand from '../commands/list.js';
 import upgradeCommand from '../commands/upgrade.js';
+import resetCommand from '../commands/reset.js';
 const program = new Command();
 
 program
@@ -31,5 +32,8 @@ program.addCommand(listCommand);
 
 // Register the `upgrade` command from another file
 program.addCommand(upgradeCommand);
+
+// Register the `reset` command from another file
+program.addCommand(resetCommand);
 
 program.parse(process.argv);
