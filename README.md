@@ -119,6 +119,7 @@ BoilerForge can initialize a Git repository when creating your project:
 | `list`        | View all available templates.                             |
 | `upgrade`     | Fetch latest templates/configs.                           |
 | `initGitRepo` | Initialize a Git repository manually in a project folder. |
+| `reset`       | Deletes one or all folders inside generated folder.       |
 
 ---
 
@@ -137,6 +138,16 @@ boilerforge create my-flask-app --template flask --no-git
 Create a bare Git repo from a template
 ```bash
 boilerforge create infra-setup --template node --git bare
+```
+
+Deletes a specific project in generated folder
+```bash
+boilerforge reset test-node-1
+```
+
+Deletes all projects in generated folder
+```bash
+boilerforge reset
 ```
 
 ---
