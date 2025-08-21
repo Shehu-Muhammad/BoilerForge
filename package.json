@@ -22,9 +22,11 @@
   },
   "homepage": "https://github.com/Shehu-Muhammad/BoilerForge#readme",
   "dependencies": {
+    "adm-zip": "^0.5.16",
     "chalk": "^5.5.0",
     "commander": "^14.0.0",
     "inquirer": "^12.9.3",
+    "node-fetch": "^3.3.2",
     "ora": "^8.2.0"
   }
 }
