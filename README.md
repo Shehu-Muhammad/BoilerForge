@@ -15,7 +15,7 @@ A simple CLI tool for generating starter templates for Node, React, Python, and 
 - [Templates Available](#templates-available)
 - [Git Integration](#git-integration)
 - [Command Reference](#command-reference)
-- [Upgrade Command - Detailed Usage](#upgrade-command-detailed-usage)
+- [Upgrade Command – Detailed Usage](#upgrade-command-detailed-usage)
 - [Examples](#examples)
 - [Contributing](#contributing)
 - [License](#license)
