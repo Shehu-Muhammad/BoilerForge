@@ -15,6 +15,7 @@ A simple CLI tool for generating starter templates for Node, React, Python, and 
 - [Templates Available](#templates-available)
 - [Git Integration](#git-integration)
 - [Command Reference](#command-reference)
+- [Upgrade Command - Detailed Usage](#upgrade-command-detailed-usage)
 - [Examples](#examples)
 - [Contributing](#contributing)
 - [License](#license)
@@ -117,37 +118,74 @@ BoilerForge can initialize a Git repository when creating your project:
 | ------------- | --------------------------------------------------------- |
 | `create`      | Create a new project from a template.                     |
 | `list`        | View all available templates.                             |
-| `upgrade`     | Fetch latest templates/configs.                           |
+| `upgrade`     | Update templates from local repo or GitHub                |
 | `initGitRepo` | Initialize a Git repository manually in a project folder. |
 | `reset`       | Deletes one or all folders inside generated folder.       |
 
 ---
 
+## Upgrade Command – Detailed Usage
+
+BoilerForge allows you to keep your templates up-to-date with the upgrade command. This ensures that any new improvements, bug fixes, or template updates are applied to your generated folder.
+
+```bash
+boilerforge upgrade
+```
+
+How It Works
+
+1. Local First:
+
+   - If you have a local templates/ folder in your project, BoilerForge will copy all templates from there into the generated/ folder.
+
+   - This is useful if you are developing or modifying templates locally.
+
+2. GitHub Fallback:
+
+   - If no local templates are found, BoilerForge will fetch templates directly from the [GitHub repository](https://github.com/shehu-muhammad/BoilerForge).
+
+   - This ensures your generated/ folder always has the latest templates even if you don’t maintain a local copy.
+
+3. Safety:
+
+   - Existing projects in the generated/ folder are cleared before updating; this does not affect your actual project directories.
+
+   - You will see console messages for every step, including success or any errors.
+
+> Tip: Run `boilerforge upgrade` regularly to ensure you have the latest templates and fixes.
+
+---
+
 ## Examples
 
-Create a Node.js project with Git
+Create a Node.js project with Git:
 ```bash
 boilerforge create api-server --template node --git
 ```
 
-Create a Flask project without Git
+Create a Flask project without Git:
 ```bash
 boilerforge create my-flask-app --template flask --no-git
 ```
 
-Create a bare Git repo from a template
+Create a bare Git repo from a template:
 ```bash
 boilerforge create infra-setup --template node --git bare
 ```
 
-Deletes a specific project in generated folder
+Deletes a specific project in generated folder:
 ```bash
 boilerforge reset test-node-1
 ```
 
-Deletes all projects in generated folder
+Deletes all projects in generated folder:
 ```bash
 boilerforge reset
+```
+
+Update templates in the generated folder from local repo or GitHub:
+```bash
+boilerforge upgrade
 ```
 
 ---
